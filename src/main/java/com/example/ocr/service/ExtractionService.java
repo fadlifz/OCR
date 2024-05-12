@@ -54,6 +54,7 @@ public class ExtractionService {
         tesseract.setDatapath("src/main/resources/");
         tesseract.setLanguage("eng");
         String convertImage = tesseract.doOCR(outputFile);
+        outputFile.delete();
         String output = convertImage.replaceAll("\\\n", " ");
         output = output.replaceAll(" ", " ");
         return output;
